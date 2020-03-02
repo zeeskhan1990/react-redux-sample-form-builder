@@ -1,0 +1,59 @@
+{
+  "store": {
+    "currentForm": {
+      "name": "formName", //undefined for new form
+      "id": "formID", // undefined for new form
+      "details": [
+        {
+          "id": 11, //mandatory
+          "name": "choice Name", //mandatory
+          "label": "choice label", //mandatory
+          "type": "text",
+          "placeholder": "Testing input",
+          "initialValue": "",
+          "currentValue": "Update Val",
+          "events": "pristine && touched && submitted && submitted with errors", //mandatory
+          "errors": [
+            "required",
+            ""
+          ]
+        },
+        {}
+      ],
+      "loading": false,
+      "error": null
+    },
+    "formList": {
+      "items": [
+        {
+          "date": "date of form creation",
+          "list": [
+            {
+              "formName": "formName",
+              "formId": "formID"
+            },
+            {}
+          ]
+        },
+        {}
+      ],
+      "loading": false,
+      "error": null
+    },
+    "create": {
+      "sourceItem": {
+        "type": "existing || new",
+        "formData": "Same as above form data example"
+      },
+      "targetItem": {
+        "id": ""
+      },
+      "saving": false,
+      "error": null
+    },
+    "validate": {
+      "submitting": false,
+      "error": null
+    }
+  }
+}
