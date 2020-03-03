@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+    
+        // To run and debug files individually
+        // So for example instead of running node src/services/customer/queries/getLocalWalkers.js,
+        // you can mention your path in 'program' property here, and then choose 'Launch Program'
+        // config option from the dropdown in debug window & start
+        // "program": "/mnt/e/Barkly/Code/barkly-linux/barkly-api-serverless/src/services/payouts/operations/initiateMembership.js",
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            //"program": "/mnt/e/Barkly/Code/barkly-linux/barkly-api-serverless/src/lib/services/stripe.js",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        },
+        // To start the debugger when the serverless api is already running being invoked by the 'network-ip' script
+        // If you are running the serverless already using startup script or otherwise, then just choose the 'Attach'
+        // config option from the dropdown in debug window & start 
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach",
+            "port": 9229,
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        },
+        // To launch the serverless in debug mode explicitly
+        // If you are not running the serverless and want to start it in a debug mode from inside VSCode,
+        // then choose 'Debug' config option from the dropdown in debug window & start  
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run-script",
+                "start"
+            ],
+            "port": 9229,
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        }
+    ]
+}
