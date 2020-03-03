@@ -10,13 +10,10 @@
           "label": "choice label", //mandatory
           "type": "text",
           "placeholder": "Testing input",
+          "customErrorMessage": {"required": "This field is required", "more": ""},
+          "validations": ["required", ""],
           "initialValue": "",
-          "currentValue": "Update Val",
-          "events": "pristine && touched && submitted && submitted with errors", //mandatory
-          "errors": [
-            "required",
-            ""
-          ]
+          "currentValue": "Update Val"
         },
         {}
       ],
@@ -40,7 +37,7 @@
       "loading": false,
       "error": null
     },
-    "create": {
+    "createForm": {
       "sourceItem": {
         "type": "existing || new",
         "formData": "Same as above form data example"
@@ -51,7 +48,7 @@
       "saving": false,
       "error": null
     },
-    "validate": {
+    "validateForm": {
       "submitting": false,
       "error": null
     }

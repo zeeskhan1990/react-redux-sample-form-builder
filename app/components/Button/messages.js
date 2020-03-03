@@ -12,4 +12,20 @@ export default defineMessages({
     id: `${scope}.header`,
     defaultMessage: 'This is the Button component!',
   },
+  validate: {
+    id: `${scope}.validate`,
+    defaultMessage: 'Validate',
+  },
+  submit: {
+    id: `${scope}.submit`,
+    defaultMessage: 'Submit',
+  },
+  cancel: {
+    id: `${scope}.cancel`,
+    defaultMessage: 'Cancel',
+  },
+  save: {
+    id: `${scope}.save`,
+    defaultMessage: 'Save',
+  },
 });

@@ -42,5 +42,6 @@ export default function* allForms() {
   // By using `takeLatest` only the result of the latest API call is applied.
   // It returns task descriptor (just like fork) so we can continue execution
   // It will be cancelled automatically on component unmount
+  console.log("SAGE VISITED TILL HERE")
   yield takeLatest(LOAD_CURRENTFORM, getCurrentForm);
 }

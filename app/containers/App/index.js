@@ -17,7 +17,7 @@ import ValidateForm from 'containers/ValidateForm/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import { useInjectSaga } from 'utils/injectSaga';
-import currentFormSaga from 'containers/App/saga';
+import saga from './saga';
 
 import GlobalStyle from '../../global-styles';
 
@@ -31,7 +31,7 @@ const AppWrapper = styled.div`
 `;
 
 export default function App() {
-  useInjectSaga({ key: 'currentForm', currentFormSaga });
+  useInjectSaga({ key: 'currentForm', saga });
   return (
     <AppWrapper>
       <Helmet
