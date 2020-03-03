@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
-import { FaPlus } from 'react-icons/fa';
+import { FiPlus } from 'react-icons/fi';
 
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
@@ -21,7 +21,8 @@ import Button from 'components/Button';
 import Input from 'components/Input';
 import Checkbox from 'components/Checkbox';
 import Text from 'components/Text';
-import Divider from 'components/Divider'
+import Divider from 'components/Divider';
+import FileUploader from 'components/FileUploader';
 
 import makeSelectFormList from './selectors';
 import reducer from './reducer';
@@ -50,16 +51,20 @@ export function FormList() {
       </Helmet>
       <div>Testing Work</div>
       <Header as="h2">Custom Header</Header>
-      <Button accent onClick={() => {}}>
-        <FaPlus />
-        <span>Test Button</span>
-      </Button>
+      <Button
+        accent
+        icon={FiPlus}
+        label="Create"
+        size={20}
+        onClick={() => {}}
+      />
       <Checkbox checked onChange={() => {}}>
         Testing Checkboxes
       </Checkbox>
       <Input onChange={() => {}} value="MY Testing Input TextArea" />
       <Text value="Sample Text Type" />
-      <Divider/>
+      <Divider />
+      <FileUploader onChange={() => {}} />
       {/* <MyText>Testing Work</MyText> */}
     </div>
   );
