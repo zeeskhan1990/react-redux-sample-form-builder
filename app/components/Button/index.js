@@ -84,11 +84,10 @@ const Button = props => {
   const { icon, label, size, onClick, children, ...styleProps } = props;
   const currentSize = size || 20;
   const Icon = icon;
-  debugger
   return (
-    <CustomButton {...styleProps} size={currentSize}>
+    <CustomButton {...styleProps} size={currentSize} onClick={onClick}>
       {icon ? <Icon size={currentSize} /> : null}
-      <span>Create</span>
+      <span>{label}</span>
       {children}
     </CustomButton>
   );
