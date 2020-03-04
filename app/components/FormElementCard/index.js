@@ -5,13 +5,30 @@
  */
 
 import React from 'react';
-// import PropTypes from 'prop-types';
-// import styled from 'styled-components';
+import styled from 'styled-components';
+import FormElementCardToolbar from 'components/FormElementCardToolbar';
 
-function FormElementCard() {
-  return <div />;
-}
+const StyledCard = styled.div`
+  padding: 20px 10px;
+  border: 1px solid black;
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+`;
 
-FormElementCard.propTypes = {};
+const Toolbar = styled.div`
+  position: absolute;
+  top: 0;
+  right: 15px;
+`;
+
+const FormElementCard = ({ children }) => (
+  <StyledCard>
+    <Toolbar>
+      <FormElementCardToolbar />
+    </Toolbar>
+    {children}
+  </StyledCard>
+);
 
 export default FormElementCard;

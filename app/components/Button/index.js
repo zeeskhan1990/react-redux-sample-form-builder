@@ -61,7 +61,7 @@ export const StyledButton = styled.button`
     margin-right: 20px;
   }
   span {
-    font-size: ${props => props.size};
+    font-size: ${props => props.size}px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;

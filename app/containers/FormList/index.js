@@ -24,9 +24,12 @@ import Text from 'components/Text';
 import Divider from 'components/Divider';
 import FileUploader from 'components/FileUploader';
 
+import SourceCard from 'components/SourceCard';
 import makeSelectFormList from './selectors';
 import reducer from './reducer';
 import saga from './saga';
+import FormElementCardToolbar from 'components/FormElementCardToolbar';
+import FormElementCard from 'components/FormElementCard';
 
 // const MyText = styled.div`
 //   font-size: 1em;
@@ -49,7 +52,6 @@ export function FormList() {
         <title>FormList</title>
         <meta name="description" content="Description of FormList" />
       </Helmet>
-      <div>Testing Work</div>
       <Header as="h2">Custom Header</Header>
       <Button accent icon={FiPlus} label="Create" onClick={() => {}} />
       <Checkbox checked onChange={() => {}}>
@@ -59,6 +61,11 @@ export function FormList() {
       <Text value="Sample Text Type" />
       <Divider />
       <FileUploader onChange={() => {}} />
+      <SourceCard label="Input" />
+      <FormElementCardToolbar />
+      <FormElementCard>
+        <Input onChange={() => {}} value="Inside Form Element" />
+      </FormElementCard>
       {/* <MyText>Testing Work</MyText> */}
     </div>
   );

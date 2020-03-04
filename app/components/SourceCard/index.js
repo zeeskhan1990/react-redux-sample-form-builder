@@ -5,67 +5,16 @@
  */
 
 import React from 'react';
-// import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import Button from 'components/Button';
+import { FiMove } from 'react-icons/fi';
+import styled from 'styled-components';
 
-// import { FormattedMessage } from 'react-intl';
-// import messages from './messages';
-
-const SourceCard = styled.div`
-  padding: 5px;
+const StyledCard = styled(Button)`
   border: 1px dashed;
   border-color: ${props => props.theme.color.white};
-  cursor: pointer;
-  &:focus {
-    outline: none;
-  }
-  background: ${props => props.theme.color.main};
-  color: ${props => props.theme.color.white};
-  width: 240px;
-  height: 48px;
-  border-radius: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  ${props => {
-    let styleProps = '';
-    if (props.accent) {
-      styleProps = styleProps.concat(
-        `background: ${props.theme.color.white}; color: ${
-          props.theme.color.main
-        };`,
-      );
-    }
-    if (props.disabled) {
-      styleProps = styleProps.concat(
-        `background: ${props.theme.color.border}; color: ${
-          props.theme.color.white
-        };`,
-      );
-    }
-    if (props.small) {
-      styleProps = styleProps.concat(
-        `width: 100px;
-        height: 40px;
-        object-fit: contain;
-        border-radius: 4px;
-         `,
-      );
-    }
-    return css`
-      ${styleProps}
-    `;
-  }}
+  cursor: move;
 `;
 
-/* function Button() {
-  return (
-    <div>
-      <FormattedMessage {...messages.header} />
-    </div>
-  );
-}
-
-Button.propTypes = {}; */
+const SourceCard = props => <StyledCard icon={FiMove} {...props} />;
 
 export default SourceCard;
