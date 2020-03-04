@@ -12,6 +12,7 @@ const ngrok =
     ? require('ngrok')
     : false;
 const { resolve } = require('path');
+const formRouter = require('./routes/formRoutes');
 const app = express();
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
@@ -34,6 +35,9 @@ app.get('*.js', (req, res, next) => {
   res.set('Content-Encoding', 'gzip');
   next();
 });
+
+// ROUTES
+app.use('/api/v1/forms', formRouter);
 
 // Start your app.
 app.listen(port, host, async err => {

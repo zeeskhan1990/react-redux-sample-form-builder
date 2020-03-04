@@ -19,8 +19,9 @@ import request from 'utils/request';
 export function* getCurrentForm(action) {
   // Select username from store
   // const username = yield select(makeSelectUsername());
-  if(action.id) {      
-    const requestURL = `https://api.github.com/users/repos/${action.id}?type=all&sort=updated`;
+  if(action.id) {
+    const mockUrl = 'https://jsonplaceholder.typicode.com/todos/1'      
+    const requestURL = mockUrl;
     try {
     // Call our request helper (see 'utils/request')
       const fetchedForm = yield call(request, requestURL);

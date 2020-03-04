@@ -18,6 +18,7 @@ const CardList = styled.div`
   width: 100%;
   align-items: flex-start;
   margin-left: 100px;
+  margin-top: 100px;
 `;
 
 function FormElementCardList({ cards, moveCardById, moveCard }) {

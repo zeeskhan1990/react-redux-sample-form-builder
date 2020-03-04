@@ -19,7 +19,6 @@ import FormElementCardToolbar from 'components/FormElementCardToolbar';
 // border: 1px solid black;
 const StyledCard = styled.div`
   padding: 30px 10px;
-  border: 1px solid black;
   min-width: 800px;
   width: fit-content;
   height: fit-content;
@@ -30,19 +29,17 @@ const StyledCard = styled.div`
     let highlightStyle = '';
     if (props.highlightNextDrop === 'up') {
       highlightStyle = highlightStyle.concat(
-        `border-top-color: ${props.theme.color.main};
-        border-top-width: 3px`,
+        `
+        border-top: 3px solid;
+        border-top-color: ${props.theme.color.main};`,
       );
     } else if (props.highlightNextDrop === 'down') {
       highlightStyle = highlightStyle.concat(
-        `border-bottom-color: ${props.theme.color.main};
-        border-bottom-width: 3px`,
+        `border-bottom: 3px solid;
+        border-bottom-color: ${props.theme.color.main};`,
       );
     } else {
-      highlightStyle = highlightStyle.concat(
-        `border-color: gray;
-        border-width: 1px`,
-      );
+      highlightStyle = highlightStyle.concat(`border-top: 0px`);
     }
     return css`
       ${highlightStyle}
