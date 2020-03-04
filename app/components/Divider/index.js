@@ -9,7 +9,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Divider = styled.div`
-  border: 1px solid;
+  border-bottom: 1px solid;
+  width: 800px;
   border-color: ${props => props.theme.color.gray};
 `;
 

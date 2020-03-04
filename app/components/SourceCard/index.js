@@ -13,6 +13,7 @@ const StyledCard = styled(Button)`
   border: 1px dashed;
   border-color: ${props => props.theme.color.white};
   cursor: move;
+  margin-bottom: 10px;
 `;
 
 const SourceCard = props => <StyledCard icon={FiMove} {...props} />;
