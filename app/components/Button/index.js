@@ -12,7 +12,7 @@ import styled, { css } from 'styled-components';
 // import { FormattedMessage } from 'react-intl';
 // import messages from './messages';
 
-export const CustomButton = styled.button`
+export const StyledButton = styled.button`
   padding: 5px;
   border: none;
   cursor: pointer;
@@ -56,6 +56,10 @@ export const CustomButton = styled.button`
       ${styleProps}
     `;
   }}
+  svg {
+    margin-left: 10px;
+    margin-right: 20px;
+  }
   span {
     font-size: ${props => props.size};
     font-weight: 500;
@@ -63,10 +67,6 @@ export const CustomButton = styled.button`
     font-style: normal;
     line-height: normal;
     letter-spacing: 0.38px;
-  }
-  svg {
-    margin-left: 10px;
-    margin-right: 20px;
   }
 `;
 
@@ -81,15 +81,15 @@ export const CustomButton = styled.button`
 Button.propTypes = {}; */
 
 const Button = props => {
-  const { icon, label, size, onClick, children, ...styleProps } = props;
+  const { icon, label, size, children, ...styledButtonProps } = props;
   const currentSize = size || 20;
   const Icon = icon;
   return (
-    <CustomButton {...styleProps} size={currentSize} onClick={onClick}>
+    <StyledButton {...styledButtonProps} size={currentSize}>
       {icon ? <Icon size={currentSize} /> : null}
       <span>{label}</span>
       {children}
-    </CustomButton>
+    </StyledButton>
   );
 };
 

@@ -51,13 +51,7 @@ export function FormList() {
       </Helmet>
       <div>Testing Work</div>
       <Header as="h2">Custom Header</Header>
-      <Button
-        accent
-        icon={FiPlus}
-        label="Create"
-        size={20}
-        onClick={() => {}}
-      />
+      <Button accent icon={FiPlus} label="Create" onClick={() => {}} />
       <Checkbox checked onChange={() => {}}>
         Testing Checkboxes
       </Checkbox>
