@@ -4,7 +4,7 @@
  *
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
@@ -30,6 +30,7 @@ import FormElementCard from 'components/FormElementCard';
 import makeSelectFormList from './selectors';
 import reducer from './reducer';
 import saga from './saga';
+import { loadFormList } from './actions';
 
 const FormsByDate = styled.div`
   display: flex;
@@ -94,12 +95,16 @@ const NamedListItem = styled.div`
   }}
 `;
 
-export function FormList() {
+export function FormList({onDateSelected}) {
   useInjectReducer({ key: 'formList', reducer });
   useInjectSaga({ key: 'formList', saga });
 
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedForm, setSelectedForm] = useState(null);
+
+  useEffect(() => {
+    onDateSelected();
+  }, []);
 
   return (
     <div>
@@ -161,7 +166,9 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch,
+    onDateSelected: () => {
+      dispatch(loadFormList());
+    }
   };
 }
 

@@ -79,6 +79,7 @@
     "ip": "1.1.5",
     "lodash": "4.17.11",
     "minimist": "1.2.0",
+    "mongoose": "^5.9.3",
     "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-dnd": "^10.0.2",

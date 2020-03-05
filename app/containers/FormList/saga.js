@@ -18,10 +18,11 @@ import request from 'utils/request';
 export function* getFormList() {
   // Select username from store
   // const username = yield select(makeSelectUsername());
-  const requestURL = `https://api.github.com/users/repos?type=all&sort=updated`;
+  const requestURL = `/api/v1/forms/forms-list`;
 
   try {
     // Call our request helper (see 'utils/request')
+    debugger
     const items = yield call(request, requestURL);
     yield put(formListLoaded(items));
   } catch (err) {
